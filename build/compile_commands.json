@@ -1,0 +1,52 @@
+[
+{
+  "directory": "/home/robo/reservation_system_demo/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/robo/reservation_system_demo/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -fPIC -std=gnu++17 -o CMakeFiles/reservation_system_demo.dir/src/Model/DataModel.cpp.o -c /home/robo/reservation_system_demo/src/Model/DataModel.cpp",
+  "file": "/home/robo/reservation_system_demo/src/Model/DataModel.cpp"
+},
+{
+  "directory": "/home/robo/reservation_system_demo/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/robo/reservation_system_demo/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -fPIC -std=gnu++17 -o CMakeFiles/reservation_system_demo.dir/src/Service/AdminService.cpp.o -c /home/robo/reservation_system_demo/src/Service/AdminService.cpp",
+  "file": "/home/robo/reservation_system_demo/src/Service/AdminService.cpp"
+},
+{
+  "directory": "/home/robo/reservation_system_demo/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/robo/reservation_system_demo/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -fPIC -std=gnu++17 -o CMakeFiles/reservation_system_demo.dir/src/Service/LoginService.cpp.o -c /home/robo/reservation_system_demo/src/Service/LoginService.cpp",
+  "file": "/home/robo/reservation_system_demo/src/Service/LoginService.cpp"
+},
+{
+  "directory": "/home/robo/reservation_system_demo/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/robo/reservation_system_demo/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -fPIC -std=gnu++17 -o CMakeFiles/reservation_system_demo.dir/src/Service/StudentService.cpp.o -c /home/robo/reservation_system_demo/src/Service/StudentService.cpp",
+  "file": "/home/robo/reservation_system_demo/src/Service/StudentService.cpp"
+},
+{
+  "directory": "/home/robo/reservation_system_demo/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/robo/reservation_system_demo/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -fPIC -std=gnu++17 -o CMakeFiles/reservation_system_demo.dir/src/Service/TeacherService.cpp.o -c /home/robo/reservation_system_demo/src/Service/TeacherService.cpp",
+  "file": "/home/robo/reservation_system_demo/src/Service/TeacherService.cpp"
+},
+{
+  "directory": "/home/robo/reservation_system_demo/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/robo/reservation_system_demo/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -fPIC -std=gnu++17 -o CMakeFiles/reservation_system_demo.dir/src/UI/AdminWindow.cpp.o -c /home/robo/reservation_system_demo/src/UI/AdminWindow.cpp",
+  "file": "/home/robo/reservation_system_demo/src/UI/AdminWindow.cpp"
+},
+{
+  "directory": "/home/robo/reservation_system_demo/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/robo/reservation_system_demo/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -fPIC -std=gnu++17 -o CMakeFiles/reservation_system_demo.dir/src/UI/LoginWindow.cpp.o -c /home/robo/reservation_system_demo/src/UI/LoginWindow.cpp",
+  "file": "/home/robo/reservation_system_demo/src/UI/LoginWindow.cpp"
+},
+{
+  "directory": "/home/robo/reservation_system_demo/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/robo/reservation_system_demo/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -fPIC -std=gnu++17 -o CMakeFiles/reservation_system_demo.dir/src/UI/StudentWindow.cpp.o -c /home/robo/reservation_system_demo/src/UI/StudentWindow.cpp",
+  "file": "/home/robo/reservation_system_demo/src/UI/StudentWindow.cpp"
+},
+{
+  "directory": "/home/robo/reservation_system_demo/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/robo/reservation_system_demo/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -fPIC -std=gnu++17 -o CMakeFiles/reservation_system_demo.dir/src/UI/TeacherWindow.cpp.o -c /home/robo/reservation_system_demo/src/UI/TeacherWindow.cpp",
+  "file": "/home/robo/reservation_system_demo/src/UI/TeacherWindow.cpp"
+},
+{
+  "directory": "/home/robo/reservation_system_demo/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/robo/reservation_system_demo/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -fPIC -std=gnu++17 -o CMakeFiles/reservation_system_demo.dir/src/main.cpp.o -c /home/robo/reservation_system_demo/src/main.cpp",
+  "file": "/home/robo/reservation_system_demo/src/main.cpp"
+}
+]
