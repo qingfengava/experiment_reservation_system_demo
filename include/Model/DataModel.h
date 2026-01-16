@@ -3,8 +3,6 @@
 #include <QDateTime>
 #include <vector>
 
-using namespace std;
-
 /* 实验信息 */
 struct Experiment {
     QString expId;        // 实验编号
@@ -47,7 +45,7 @@ struct Reservation {
 };
 
 /* 全局数据容器声明 */
-extern vector<Experiment> g_experiments;
-extern vector<Student> g_students;
-extern vector<Teacher> g_teachers;
-extern vector<Reservation> g_reservations;
+extern std::vector<Experiment> g_experiments;
+extern std::vector<Student> g_students;
+extern std::vector<Teacher> g_teachers;
+extern std::vector<Reservation> g_reservations;
