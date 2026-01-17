@@ -4,10 +4,10 @@
 class TeacherService {
 public:
     // 查询本教师所指导的实验
-    static vector<Experiment> queryMyExperiments(const QString& teacherId);
+    static std::vector<Experiment> queryMyExperiments(const QString& teacherId);
 
     // 查询某实验的全部预约学生
-    static vector<Reservation> queryExperimentStudents(const QString& expId);
+    static std::vector<Reservation> queryExperimentStudents(const QString& expId);
 
     // 导入实验成绩（TXT 文件）
     static bool importScoresFromFile(const QString& expId,

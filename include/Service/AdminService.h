@@ -18,19 +18,19 @@ public:
     static bool publishExperiment(const QString& expId);
 
     // 查询全部实验
-    static vector<Experiment> getAllExperiments();
+    static std::vector<Experiment> getAllExperiments();
 
     /* ===== 学生管理 ===== */
 
     static bool addStudent(const Student& stu);
     static bool updateStudent(const QString& studentId, const Student& newStu);
     static bool deleteStudent(const QString& studentId);
-    static vector<Student> getAllStudents();
+    static std::vector<Student> getAllStudents();
 
     /* ===== 教师管理 ===== */
 
     static bool addTeacher(const Teacher& tea);
     static bool updateTeacher(const QString& teacherId, const Teacher& newTea);
     static bool deleteTeacher(const QString& teacherId);
-    static vector<Teacher> getAllTeachers();
+    static std::vector<Teacher> getAllTeachers();
 };
