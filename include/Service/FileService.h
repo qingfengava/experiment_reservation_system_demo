@@ -1,10 +1,6 @@
 #pragma once
 #include <QString>
 
-/**
- * @brief FileService
- * 负责系统数据的文件加载、保存以及导出功能
- */
 class FileService
 {
 public:
