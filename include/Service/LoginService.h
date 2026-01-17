@@ -14,16 +14,14 @@ struct LoginResult {
     bool success;
     UserRole role;
     QString userId;
+    QString message;
 };
 
 class LoginService {
 public:
-    // 管理员登录
-    static LoginResult adminLogin(const QString& id, const QString& password);
+    static LoginResult login(const QString& id,
+                             const QString& password,
+                             UserRole role);
 
-    // 学生登录
-    static LoginResult studentLogin(const QString& studentId, const QString& password);
-
-    // 教师登录
-    static LoginResult teacherLogin(const QString& teacherId, const QString& password);
+    static bool initData(const QString& inputDir);
 };
