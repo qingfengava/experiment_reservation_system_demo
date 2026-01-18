@@ -19,7 +19,7 @@ public:
     static bool loadReservations(const QString& filePath);
 
     /// 一键加载 input 目录下的所有数据
-    static bool loadAll(const QString& dirPath);
+    static bool loadAll(void);
 
 
     /* ================== 数据保存（程序退出前） ================== */
@@ -37,13 +37,16 @@ public:
     static bool saveReservations(const QString& filePath);
 
     /// 一键保存所有数据
-    static bool saveAll(const QString& dirPath);
+    static bool saveAll(void);
 
 
     /* ================== 数据导出（结果输出） ================== */
 
     /// 导出学生信息为 CSV
     static bool exportStudentsToCSV(const QString& filePath);
+
+    /// 导出教师信息为 CSV
+    static bool exportTeachersToCSV(const QString& filePath);
 
     /// 导出实验信息为 CSV
     static bool exportExperimentsToCSV(const QString& filePath);
@@ -54,6 +57,9 @@ public:
 
     /// 导出学生信息为 TXT
     static bool exportStudentsToTXT(const QString& filePath);
+
+    /// 导出教师信息为 TXT
+    static bool exportTeachersToTXT(const QString& filePath);
 
     /// 导出实验信息为 TXT
     static bool exportExperimentsToTXT(const QString& filePath);

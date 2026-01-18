@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TeacherWindow</class>
+ <widget class="QMainWindow" name="TeacherWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>教师实验管理系统</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+
+    <!-- 教师实验表格 -->
+    <item>
+     <widget class="QGroupBox" name="groupExperiments">
+      <property name="title"><string>我的实验</string></property>
+      <layout class="QVBoxLayout" name="vboxMyExperiments">
+       <item>
+        <widget class="QTableWidget" name="tableMyExperiments">
+         <property name="columnCount"><number>6</number></property>
+         <property name="rowCount"><number>0</number></property>
+         <column><property name="text"><string>实验编号</string></property></column>
+         <column><property name="text"><string>实验名称</string></property></column>
+         <column><property name="text"><string>开始时间</string></property></column>
+         <column><property name="text"><string>结束时间</string></property></column>
+         <column><property name="text"><string>总席位</string></property></column>
+         <column><property name="text"><string>预约人数</string></property></column>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="hboxMyExperimentsButtons">
+         <item><widget class="QPushButton" name="btnRefreshMyExperiments"><property name="text"><string>刷新实验列表</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnViewExperimentStudents"><property name="text"><string>查看学生</string></property></widget></item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- 实验学生信息表格 -->
+    <item>
+     <widget class="QGroupBox" name="groupStudents">
+      <property name="title"><string>实验学生信息</string></property>
+      <layout class="QVBoxLayout" name="vboxExperimentStudents">
+       <item>
+        <widget class="QTableWidget" name="tableExperimentStudents">
+         <property name="columnCount"><number>3</number></property>
+         <property name="rowCount"><number>0</number></property>
+         <column><property name="text"><string>学号</string></property></column>
+         <column><property name="text"><string>姓名</string></property></column>
+         <column><property name="text"><string>成绩</string></property></column>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="hboxStudentButtons">
+         <item><widget class="QPushButton" name="btnImportScores"><property name="text"><string>导入成绩 TXT</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnUpdateScore"><property name="text"><string>手动修改成绩</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnExportReservationsCSV"><property name="text"><string>导出成绩 CSV</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnExportReservationsTXT"><property name="text"><string>导出成绩 TXT</string></property></widget></item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

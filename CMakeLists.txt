@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
@@ -17,9 +20,15 @@ file(GLOB_RECURSE HEADERS
     include/*.h
 )
 
+file(GLOB_RECURSE UIS
+    src/*.ui
+)
+
+
 add_executable(reservation_system_demo
     ${SOURCES}
     ${HEADERS}
+    ${UIS}
 )
 
 target_include_directories(reservation_system_demo PRIVATE include)

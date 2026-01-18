@@ -9,10 +9,10 @@ bool LoginService::initData(const QString &inputDir) {
     return true;
 
   bool ok = true;
-  ok &= FileService::loadStudents(inputDir + "/students.txt");
-  ok &= FileService::loadTeachers(inputDir + "/teachers.txt");
-  ok &= FileService::loadExperiments(inputDir + "/experiments.txt");
-  ok &= FileService::loadReservations(inputDir + "/reservations.txt");
+  ok &= FileService::loadStudents("students.txt");
+  ok &= FileService::loadTeachers("teachers.txt");
+  ok &= FileService::loadExperiments("experiments.txt");
+  ok &= FileService::loadReservations("reservations.txt");
 
   g_dataInitialized = ok;
   return ok;
