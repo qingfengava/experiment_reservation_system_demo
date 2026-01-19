@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StudentWindow</class>
+ <widget class="QMainWindow" name="StudentWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>学生实验预约系统</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+
+      <!-- 可预约实验 Tab -->
+      <widget class="QWidget" name="tabAvailableExperiments">
+       <attribute name="title"><string>可预约实验</string></attribute>
+       <layout class="QVBoxLayout" name="vboxAvailable">
+        <item>
+         <widget class="QTableWidget" name="tableAvailableExperiments">
+          <property name="columnCount">
+           <number>7</number>
+          </property>
+          <property name="rowCount">
+           <number>0</number>
+          </property>
+          <column><property name="text"><string>实验编号</string></property></column>
+          <column><property name="text"><string>实验名称</string></property></column>
+          <column><property name="text"><string>开始时间</string></property></column>
+          <column><property name="text"><string>结束时间</string></property></column>
+          <column><property name="text"><string>总席位</string></property></column>
+          <column><property name="text"><string>预约人数</string></property></column>
+          <column><property name="text"><string>教师姓名</string></property></column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hboxAvailableButtons">
+          <item><widget class="QPushButton" name="btnQueryAvailable"><property name="text"><string>刷新列表</string></property></widget></item>
+          <item><widget class="QPushButton" name="btnReserve"><property name="text"><string>预约实验</string></property></widget></item>
+          <item><widget class="QPushButton" name="btnExportMyReservationsCSV"><property name="text"><string>导出已预约实验 CSV</string></property></widget></item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- 我的预约 Tab -->
+      <widget class="QWidget" name="tabMyReservations">
+       <attribute name="title"><string>我的预约</string></attribute>
+       <layout class="QVBoxLayout" name="vboxMyReservations">
+        <item>
+         <widget class="QTableWidget" name="tableMyReservations">
+          <property name="columnCount"><number>4</number></property>
+          <property name="rowCount"><number>0</number></property>
+          <column><property name="text"><string>实验编号</string></property></column>
+          <column><property name="text"><string>实验名称</string></property></column>
+          <column><property name="text"><string>教师姓名</string></property></column>
+          <column><property name="text"><string>成绩</string></property></column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hboxMyReservationButtons">
+          <item><widget class="QPushButton" name="btnQueryMyReservations"><property name="text"><string>刷新列表</string></property></widget></item>
+          <item><widget class="QPushButton" name="btnCancelReservation"><property name="text"><string>取消预约</string></property></widget></item>
+          <item><widget class="QPushButton" name="btnExportMyReservationsTXT"><property name="text"><string>导出已预约实验 TXT</string></property></widget></item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- 个人信息 Tab -->
+      <widget class="QWidget" name="tabProfile">
+       <attribute name="title"><string>个人信息</string></attribute>
+       <layout class="QFormLayout" name="formProfile">
+        <item row="0" column="0"><widget class="QLabel" name="labelName"><property name="text"><string>姓名：</string></property></widget></item>
+        <item row="0" column="1"><widget class="QLineEdit" name="editName"/></item>
+        <item row="1" column="0"><widget class="QLabel" name="labelCollege"><property name="text"><string>学院：</string></property></widget></item>
+        <item row="1" column="1"><widget class="QLineEdit" name="editCollege"/></item>
+        <item row="2" column="0"><widget class="QLabel" name="labelMajor"><property name="text"><string>专业：</string></property></widget></item>
+        <item row="2" column="1"><widget class="QLineEdit" name="editMajor"/></item>
+        <item row="3" column="0"><widget class="QLabel" name="labelPassword"><property name="text"><string>密码：</string></property></widget></item>
+        <item row="3" column="1"><widget class="QLineEdit" name="editPassword"><property name="echoMode"><enum>QLineEdit::Password</enum></property></widget></item>
+        <item row="4" column="1"><widget class="QPushButton" name="btnUpdateProfile"><property name="text"><string>更新个人信息</string></property></widget></item>
+       </layout>
+      </widget>
+
+      <!-- 成绩 Tab -->
+      <widget class="QWidget" name="tabScores">
+       <attribute name="title"><string>成绩</string></attribute>
+       <layout class="QVBoxLayout" name="vboxScores">
+        <item>
+         <widget class="QTableWidget" name="tableScores">
+          <property name="columnCount"><number>3</number></property>
+          <property name="rowCount"><number>0</number></property>
+          <column><property name="text"><string>实验名称</string></property></column>
+          <column><property name="text"><string>教师姓名</string></property></column>
+          <column><property name="text"><string>成绩</string></property></column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnQueryScores"><property name="text"><string>查询成绩</string></property></widget>
+        </item>
+       </layout>
+      </widget>
+
+     </widget> <!-- tabWidget -->
+
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

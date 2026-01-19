@@ -1,4 +1,8 @@
 #include "Service/FileService.h"
+#include "Model/DataModel.h"
+#include <QFile>
+#include <QTextStream>
+#include <QDir>
 
 bool FileService ::loadStudents(const QString &filePath)
 {

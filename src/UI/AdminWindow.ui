@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminWindow</class>
+ <widget class="QMainWindow" name="AdminWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>实验预约系统 - 管理员</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+
+      <!-- 实验管理 Tab -->
+      <widget class="QWidget" name="tabExperiments">
+       <attribute name="title"><string>实验管理</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_Exp">
+        <item>
+         <widget class="QTableWidget" name="tableExperiments"/>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_ExpForm">
+          <item row="0" column="0"><widget class="QLabel" name="labelExpId"><property name="text"><string>实验编号</string></property></widget></item>
+          <item row="0" column="1"><widget class="QLineEdit" name="editExpId"/></item>
+          <item row="1" column="0"><widget class="QLabel" name="labelExpName"><property name="text"><string>实验名称</string></property></widget></item>
+          <item row="1" column="1"><widget class="QLineEdit" name="editExpName"/></item>
+          <item row="2" column="0"><widget class="QLabel" name="labelStartTime"><property name="text"><string>开始时间</string></property></widget></item>
+          <item row="2" column="1"><widget class="QDateTimeEdit" name="startDateTime"/></item>
+          <item row="3" column="0"><widget class="QLabel" name="labelEndTime"><property name="text"><string>结束时间</string></property></widget></item>
+          <item row="3" column="1"><widget class="QDateTimeEdit" name="endDateTime"/></item>
+          <item row="4" column="0"><widget class="QLabel" name="labelTotalSeats"><property name="text"><string>总席位</string></property></widget></item>
+          <item row="4" column="1"><widget class="QSpinBox" name="spinTotalSeats"/></item>
+          <item row="5" column="0"><widget class="QLabel" name="labelTeacherId"><property name="text"><string>教师编号</string></property></widget></item>
+          <item row="5" column="1"><widget class="QLineEdit" name="editTeacherId"/></item>
+          <item row="6" column="0"><widget class="QLabel" name="labelTeacherName"><property name="text"><string>教师姓名</string></property></widget></item>
+          <item row="6" column="1"><widget class="QLineEdit" name="editTeacherName"/></item>
+          <item row="7" column="0"><widget class="QPushButton" name="btnAddExp"><property name="text"><string>添加</string></property></widget></item>
+          <item row="7" column="1"><widget class="QPushButton" name="btnUpdateExp"><property name="text"><string>修改</string></property></widget></item>
+          <item row="8" column="0"><widget class="QPushButton" name="btnDeleteExp"><property name="text"><string>删除</string></property></widget></item>
+          <item row="8" column="1"><widget class="QPushButton" name="btnPublishExp"><property name="text"><string>发布</string></property></widget></item>
+          <item row="9" column="0" colspan="2"><widget class="QPushButton" name="btnExportExpCSV"><property name="text"><string>导出实验CSV</string></property></widget></item>
+          <item row="10" column="0" colspan="2"><widget class="QPushButton" name="btnExportExpTXT"><property name="text"><string>导出实验TXT</string></property></widget></item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- 学生管理 Tab -->
+      <widget class="QWidget" name="tabStudents">
+       <attribute name="title"><string>学生管理</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_Stu">
+        <item>
+         <widget class="QTableWidget" name="tableStudents"/>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_StuForm">
+          <item row="0" column="0"><widget class="QLabel" name="labelStuId"><property name="text"><string>学号</string></property></widget></item>
+          <item row="0" column="1"><widget class="QLineEdit" name="editStuId"/></item>
+          <item row="1" column="0"><widget class="QLabel" name="labelStuName"><property name="text"><string>姓名</string></property></widget></item>
+          <item row="1" column="1"><widget class="QLineEdit" name="editStuName"/></item>
+          <item row="2" column="0"><widget class="QLabel" name="labelStuCollege"><property name="text"><string>学院</string></property></widget></item>
+          <item row="2" column="1"><widget class="QLineEdit" name="editStuCollege"/></item>
+          <item row="3" column="0"><widget class="QLabel" name="labelStuMajor"><property name="text"><string>专业</string></property></widget></item>
+          <item row="3" column="1"><widget class="QLineEdit" name="editStuMajor"/></item>
+          <item row="4" column="0"><widget class="QLabel" name="labelStuPassword"><property name="text"><string>密码</string></property></widget></item>
+          <item row="4" column="1"><widget class="QLineEdit" name="editStuPassword"/></item>
+          <item row="5" column="0"><widget class="QPushButton" name="btnAddStu"><property name="text"><string>添加</string></property></widget></item>
+          <item row="5" column="1"><widget class="QPushButton" name="btnUpdateStu"><property name="text"><string>修改</string></property></widget></item>
+          <item row="6" column="0"><widget class="QPushButton" name="btnDeleteStu"><property name="text"><string>删除</string></property></widget></item>
+          <item row="6" column="1"><widget class="QPushButton" name="btnRefreshStu"><property name="text"><string>刷新</string></property></widget></item>
+          <item row="7" column="0" colspan="2"><widget class="QPushButton" name="btnExportStuCSV"><property name="text"><string>导出学生CSV</string></property></widget></item>
+          <item row="8" column="0" colspan="2"><widget class="QPushButton" name="btnExportStuTXT"><property name="text"><string>导出学生TXT</string></property></widget></item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- 教师管理 Tab -->
+      <widget class="QWidget" name="tabTeachers">
+       <attribute name="title"><string>教师管理</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_Tea">
+        <item>
+         <widget class="QTableWidget" name="tableTeachers"/>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_TeaForm">
+          <item row="0" column="0"><widget class="QLabel" name="labelTeaId"><property name="text"><string>工号</string></property></widget></item>
+          <item row="0" column="1"><widget class="QLineEdit" name="editTeaId"/></item>
+          <item row="1" column="0"><widget class="QLabel" name="labelTeaName"><property name="text"><string>姓名</string></property></widget></item>
+          <item row="1" column="1"><widget class="QLineEdit" name="editTeaName"/></item>
+          <item row="2" column="0"><widget class="QLabel" name="labelTeaCollege"><property name="text"><string>学院</string></property></widget></item>
+          <item row="2" column="1"><widget class="QLineEdit" name="editTeaCollege"/></item>
+          <item row="3" column="0"><widget class="QLabel" name="labelTeaPassword"><property name="text"><string>密码</string></property></widget></item>
+          <item row="3" column="1"><widget class="QLineEdit" name="editTeaPassword"/></item>
+          <item row="4" column="0" colspan="1"><widget class="QPushButton" name="btnAddTea"><property name="text"><string>添加</string></property></widget></item>
+          <item row="4" column="1" colspan="1"><widget class="QPushButton" name="btnUpdateTea"><property name="text"><string>修改</string></property></widget></item>
+          <item row="5" column="0"><widget class="QPushButton" name="btnDeleteTea"><property name="text"><string>删除</string></property></widget></item>
+          <item row="5" column="1"><widget class="QPushButton" name="btnRefreshTea"><property name="text"><string>刷新</string></property></widget></item>
+          <item row="6" column="0" colspan="2"><widget class="QPushButton" name="btnExportTeaCSV"><property name="text"><string>导出教师CSV</string></property></widget></item>
+          <item row="7" column="0" colspan="2"><widget class="QPushButton" name="btnExportTeaTXT"><property name="text"><string>导出教师TXT</string></property></widget></item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
