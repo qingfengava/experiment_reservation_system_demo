@@ -43,7 +43,7 @@ bool AdminService::deleteExperiment(const QString &expId) {
 
 bool AdminService::publishExperiment(const QString &expId) {
   for (auto &e : g_experiments) {
-    if (e.expId == expId) {
+    if (e.expId.trimmed() == expId.trimmed()) {
       if (e.published) {
         return false;
       }
