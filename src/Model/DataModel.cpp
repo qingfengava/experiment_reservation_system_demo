@@ -1,4 +1,4 @@
-#include"Model/DataModel.h"
+#include "Model/DataModel.h"
 
 // 学生数据
 std::vector<Student> g_students;

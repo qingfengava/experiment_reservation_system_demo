@@ -35,7 +35,7 @@ AdminWindow::AdminWindow(QWidget *parent)
   connect(ui->btnUpdateStu, &QPushButton::clicked, this,
           &AdminWindow::onUpdateStudent);
   connect(ui->btnDeleteStu, &QPushButton::clicked, this,
-          &AdminWindow::onDeleteStudent);        
+          &AdminWindow::onDeleteStudent);
   connect(ui->btnExportStuCSV, &QPushButton::clicked, this,
           &AdminWindow::onExportStudentsCSV);
   connect(ui->btnExportStuTXT, &QPushButton::clicked, this,
@@ -114,11 +114,12 @@ void AdminWindow::onPublishExperiment() {
   onRefreshExperiments();
 }
 
-void AdminWindow::onRefreshExperiments()
-{
+void AdminWindow::onRefreshExperiments() {
 
   ui->tableExperiments->setColumnCount(7);
-  ui->tableExperiments->setHorizontalHeaderLabels({"实验ID", "实验名称", "开始时间", "结束时间", "总座位数", "已预约数", "是否发布"});
+  ui->tableExperiments->setHorizontalHeaderLabels(
+      {"实验ID", "实验名称", "开始时间", "结束时间", "总座位数", "已预约数",
+       "是否发布"});
 
   // 清空原有行
   ui->tableExperiments->setRowCount(0);
@@ -128,31 +129,39 @@ void AdminWindow::onRefreshExperiments()
   qDebug() << "获取到的实验数量：" << list.size();
 
   // 遍历填充数据
-  for (int i = 0; i < (int)list.size(); ++i)
-  {
+  for (int i = 0; i < (int)list.size(); ++i) {
     const auto &exp = list[i]; //
     ui->tableExperiments->insertRow(i);
 
     // 列0：实验ID
-    ui->tableExperiments->setItem(i, 0, new QTableWidgetItem(exp.expId.isEmpty() ? "空ID" : exp.expId));
+    ui->tableExperiments->setItem(
+        i, 0, new QTableWidgetItem(exp.expId.isEmpty() ? "空ID" : exp.expId));
     // 列1：实验名称
-    ui->tableExperiments->setItem(i, 1, new QTableWidgetItem(exp.expName.isEmpty() ? "空名称" : exp.expName));
+    ui->tableExperiments->setItem(
+        i, 1,
+        new QTableWidgetItem(exp.expName.isEmpty() ? "空名称" : exp.expName));
     // 列2：开始时间（验证有效性）
-    QString startTimeStr = exp.startTime.isValid() ? exp.startTime.toString("yyyy-MM-dd HH:mm:ss") : "无效时间";
+    QString startTimeStr = exp.startTime.isValid()
+                               ? exp.startTime.toString("yyyy-MM-dd HH:mm:ss")
+                               : "无效时间";
     ui->tableExperiments->setItem(i, 2, new QTableWidgetItem(startTimeStr));
     // 列3：结束时间
-    QString endTimeStr = exp.endTime.isValid() ? exp.endTime.toString("yyyy-MM-dd HH:mm:ss") : "无效时间";
+    QString endTimeStr = exp.endTime.isValid()
+                             ? exp.endTime.toString("yyyy-MM-dd HH:mm:ss")
+                             : "无效时间";
     ui->tableExperiments->setItem(i, 3, new QTableWidgetItem(endTimeStr));
     // 列4：总座位数
-    ui->tableExperiments->setItem(i, 4, new QTableWidgetItem(QString::number(exp.totalSeats)));
+    ui->tableExperiments->setItem(
+        i, 4, new QTableWidgetItem(QString::number(exp.totalSeats)));
     // 列5：已预约数
-    ui->tableExperiments->setItem(i, 5, new QTableWidgetItem(QString::number(exp.reservedCount)));
+    ui->tableExperiments->setItem(
+        i, 5, new QTableWidgetItem(QString::number(exp.reservedCount)));
     // 列6：是否发布
-    ui->tableExperiments->setItem(i, 6, new QTableWidgetItem(exp.published ? "是" : "否"));
+    ui->tableExperiments->setItem(
+        i, 6, new QTableWidgetItem(exp.published ? "是" : "否"));
   }
 
-  for (int col = 0; col < ui->tableExperiments->columnCount(); ++col)
-  {
+  for (int col = 0; col < ui->tableExperiments->columnCount(); ++col) {
     ui->tableExperiments->setColumnHidden(col, false);
   }
 
@@ -198,14 +207,14 @@ void AdminWindow::onDeleteStudent() {
   onRefreshStudents();
 }
 
-void AdminWindow::onRefreshStudents()
-{
-  ui->tableStudents->setColumnCount(4); // 学生表需要4列（学号、姓名、学院、专业）
-  ui->tableStudents->setHorizontalHeaderLabels({"学号", "姓名", "学院", "专业"});
+void AdminWindow::onRefreshStudents() {
+  ui->tableStudents->setColumnCount(
+      4); // 学生表需要4列（学号、姓名、学院、专业）
+  ui->tableStudents->setHorizontalHeaderLabels(
+      {"学号", "姓名", "学院", "专业"});
   ui->tableStudents->setRowCount(0);
   auto list = AdminService::getAllStudents();
-  for (int i = 0; i < (int)list.size(); ++i)
-  {
+  for (int i = 0; i < (int)list.size(); ++i) {
     ui->tableStudents->insertRow(i);
     ui->tableStudents->setItem(i, 0, new QTableWidgetItem(list[i].studentId));
     ui->tableStudents->setItem(i, 1, new QTableWidgetItem(list[i].name));
@@ -251,21 +260,18 @@ void AdminWindow::onDeleteTeacher() {
   onRefreshTeachers();
 }
 
-void AdminWindow::onRefreshTeachers()
-{
+void AdminWindow::onRefreshTeachers() {
   ui->tableTeachers->setColumnCount(3); // 教师表需要3列（教师ID、姓名、学院）
   ui->tableTeachers->setHorizontalHeaderLabels({"教师ID", "姓名", "学院"});
   ui->tableTeachers->setRowCount(0);
   auto list = AdminService::getAllTeachers();
-  for (int i = 0; i < (int)list.size(); ++i)
-  {
+  for (int i = 0; i < (int)list.size(); ++i) {
     ui->tableTeachers->insertRow(i);
     ui->tableTeachers->setItem(i, 0, new QTableWidgetItem(list[i].teacherId));
     ui->tableTeachers->setItem(i, 1, new QTableWidgetItem(list[i].name));
     ui->tableTeachers->setItem(i, 2, new QTableWidgetItem(list[i].college));
   }
 }
-
 
 /* ================== 导出功能 ================== */
 void AdminWindow::onExportExperimentsCSV() {

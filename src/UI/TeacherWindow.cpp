@@ -9,8 +9,7 @@
 #include <QMessageBox>
 
 TeacherWindow::TeacherWindow(const QString &teacherId, QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::TeacherWindow), m_teacherId(teacherId)
-{
+    : QMainWindow(parent), ui(new Ui::TeacherWindow), m_teacherId(teacherId) {
   ui->setupUi(this);
 
   onRefreshMyExperiments();
@@ -32,23 +31,21 @@ TeacherWindow::TeacherWindow(const QString &teacherId, QWidget *parent)
 TeacherWindow::~TeacherWindow() { delete ui; }
 
 /* ================== 窗口关闭自动保存 ================== */
-void TeacherWindow::closeEvent(QCloseEvent *event)
-{
+void TeacherWindow::closeEvent(QCloseEvent *event) {
   FileService::saveAll();
   event->accept();
 }
 
 /* ================== 查询教师实验 ================== */
-void TeacherWindow::onRefreshMyExperiments()
-{
+void TeacherWindow::onRefreshMyExperiments() {
   ui->tableMyExperiments->setColumnCount(6);
-  ui->tableMyExperiments->setHorizontalHeaderLabels({"实验ID", "实验名称", "开始时间", "结束时间", "总座位数", "已预约数"});
+  ui->tableMyExperiments->setHorizontalHeaderLabels(
+      {"实验ID", "实验名称", "开始时间", "结束时间", "总座位数", "已预约数"});
 
   ui->tableMyExperiments->setRowCount(0);
 
   auto list = TeacherService::queryMyExperiments(m_teacherId);
-  for (int i = 0; i < (int)list.size(); ++i)
-  {
+  for (int i = 0; i < (int)list.size(); ++i) {
     ui->tableMyExperiments->insertRow(i);
     ui->tableMyExperiments->setItem(i, 0, new QTableWidgetItem(list[i].expId));
     ui->tableMyExperiments->setItem(i, 1,
@@ -65,11 +62,9 @@ void TeacherWindow::onRefreshMyExperiments()
 }
 
 /* ================== 查询实验学生 ================== */
-void TeacherWindow::onViewExperimentStudents()
-{
+void TeacherWindow::onViewExperimentStudents() {
   auto selectedItems = ui->tableMyExperiments->selectedItems();
-  if (selectedItems.isEmpty())
-  {
+  if (selectedItems.isEmpty()) {
     QMessageBox::warning(this, "提示", "请先选择实验");
     return;
   }
@@ -81,8 +76,7 @@ void TeacherWindow::onViewExperimentStudents()
   ui->tableExperimentStudents->setRowCount(0);
   auto list = TeacherService::queryExperimentStudents(expId);
 
-  for (int i = 0; i < (int)list.size(); ++i)
-  {
+  for (int i = 0; i < (int)list.size(); ++i) {
     ui->tableExperimentStudents->insertRow(i);
     ui->tableExperimentStudents->setItem(
         i, 0, new QTableWidgetItem(list[i].studentId));
@@ -92,11 +86,9 @@ void TeacherWindow::onViewExperimentStudents()
 }
 
 /* ================== 导入成绩 TXT ================== */
-void TeacherWindow::onImportScores()
-{
+void TeacherWindow::onImportScores() {
   auto selectedItems = ui->tableMyExperiments->selectedItems();
-  if (selectedItems.isEmpty())
-  {
+  if (selectedItems.isEmpty()) {
     QMessageBox::warning(this, "提示", "请先选择实验");
     return;
   }
@@ -107,24 +99,19 @@ void TeacherWindow::onImportScores()
   if (filePath.isEmpty())
     return;
 
-  if (TeacherService::importScoresFromFile(expId, filePath))
-  {
+  if (TeacherService::importScoresFromFile(expId, filePath)) {
     QMessageBox::information(this, "成功", "成绩导入成功");
-  }
-  else
-  {
+  } else {
     QMessageBox::warning(this, "失败", "成绩导入失败");
   }
 }
 
 /* ================== 手动修改成绩 ================== */
-void TeacherWindow::onUpdateScore()
-{
+void TeacherWindow::onUpdateScore() {
   auto expItems = ui->tableMyExperiments->selectedItems();
   auto stuItems = ui->tableExperimentStudents->selectedItems();
 
-  if (expItems.isEmpty() || stuItems.isEmpty())
-  {
+  if (expItems.isEmpty() || stuItems.isEmpty()) {
     QMessageBox::warning(this, "提示", "请选择实验和学生");
     return;
   }
@@ -137,23 +124,18 @@ void TeacherWindow::onUpdateScore()
   if (!ok)
     return;
 
-  if (TeacherService::updateScore(expId, studentId, score))
-  {
+  if (TeacherService::updateScore(expId, studentId, score)) {
     QMessageBox::information(this, "成功", "成绩修改成功");
     onViewExperimentStudents();
-  }
-  else
-  {
+  } else {
     QMessageBox::warning(this, "失败", "修改失败");
   }
 }
 
 /* ================== 导出实验成绩 ================== */
-void TeacherWindow::onExportReservationsCSV()
-{
+void TeacherWindow::onExportReservationsCSV() {
   auto selectedItems = ui->tableMyExperiments->selectedItems();
-  if (selectedItems.isEmpty())
-  {
+  if (selectedItems.isEmpty()) {
     QMessageBox::warning(this, "提示", "请选择实验");
     return;
   }
@@ -165,11 +147,9 @@ void TeacherWindow::onExportReservationsCSV()
   QMessageBox::information(this, "导出", "成绩已导出 CSV");
 }
 
-void TeacherWindow::onExportReservationsTXT()
-{
+void TeacherWindow::onExportReservationsTXT() {
   auto selectedItems = ui->tableMyExperiments->selectedItems();
-  if (selectedItems.isEmpty())
-  {
+  if (selectedItems.isEmpty()) {
     QMessageBox::warning(this, "提示", "请选择实验");
     return;
   }
