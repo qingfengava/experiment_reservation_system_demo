@@ -257,7 +257,7 @@ bool FileService ::loadReservations(const QString &filePath)
 
 bool FileService ::loadAll(void)
 {
-    if (FileService ::loadStudents("Students.txt") && FileService ::loadTeachers("Teachers.txt") && FileService ::loadExperiments("Experiments.txt") && FileService ::loadReservations("Reservations.txt"))
+    if (FileService ::loadStudents("students.txt") && FileService ::loadTeachers("teachers.txt") && FileService ::loadExperiments("experiments.txt") && FileService ::loadReservations("reservations.txt"))
         return true;
 
     return false;
@@ -401,7 +401,7 @@ bool FileService ::saveReservations(const QString &filePath)
     {
         QString Score = QString::number(index.score);
 
-        out << index.expId << "," << index.expName << "," << index.studentId << "," << index.studentName << index.teacherId << "," << index.teacherName << "," << Score << "\n";
+        out << index.expId << "," << index.expName << "," << index.studentId << "," << index.studentName << "," << index.teacherId << "," << index.teacherName << "," << Score << "\n";
     }
 
     file_out.close();
@@ -413,7 +413,7 @@ bool FileService ::saveReservations(const QString &filePath)
 
 bool FileService ::saveAll(void)
 {
-    if (FileService ::saveStudents("Students.txt") && FileService ::saveTeachers("Teachers.txt") && FileService ::saveExperiments("Experiments.txt") && FileService ::saveReservations("Reservations.txt"))
+    if (FileService ::saveStudents("students.txt") && FileService ::saveTeachers("teachers.txt") && FileService ::saveExperiments("experiments.txt") && FileService ::saveReservations("reservations.txt"))
         return true;
 
     return false;
